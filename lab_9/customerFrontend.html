@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <script type="text/javascript" src="store.js"></script>
+        <script type="text/javascript" src="product.js"></script>
+        <script type="text/javascript" src="formChecker.js"></script>
+        <title>3. Store</title>
+    </head>
+    <body>
+        <nav>
+            <a class="nav" href="../index.html">Home</a> |
+            <a class="nav" href="php_tutorial.html">Multiplication Table</a> |
+            <a class="nav" href="quiz.html">Quiz</a> |
+            <a class="nav" href="#top">Store</a> |
+        </nav>
+        <div>
+            <h1>My Store</h1>
+            <form onsubmit="return checkInputValidity()" id="form1" action=" customerBackend.php" method="POST">
+                <h2>Login Info</h2>
+                <label for=usr_email>Username: </label>
+                <input type="email" id="usr_email" name="user"><br>
+                <label for="usr_pass">Password: </label>
+                <input type="password" id="usr_pass" name="pass"><br><br>
+                <h2>Product Details</h2>
+                <table >
+                    <th>Item</th><th>Quantity</th><th>Cost Per Unit</th>
+                    <tr><td>iPhone</td><td><input id="iphone" name="iphone" type="number" min="0" value="0"></td><td>350.40</td></tr>
+                    <tr><td>iPad</td><td><input id="ipad" name="ipad" type="number" min="0" value="0"></td><td>750.52</td></tr>
+                    <tr><td>iMac</td><td><input id="imac" name="imac" type="number" min="0" value="0"></td><td>1045.24</td></tr>
+                </table>
+                <h2>Shipping Options</h2>
+                <input type="radio" id="ship1" name="shipping" value="25.00">
+                <label for="ship1">Standard: $25.00</label><br>
+                <input type="radio" id="ship2" name="shipping" value="50.00">
+                <label for="ship2">Next Business Day: $50.00</label><br>
+                <input type="radio" id="ship3" name="shipping" value="75.00">
+                <label for="ship3">Overnight: $75.00</label><br><br><hr><br>
+                <input type=submit>
+                <input type="reset">
+                <p id="errs"></p>
+            </form>
+        </div>
+
+        <script>window.addEventListener("DOMContentLoaded", e=>{
+            window.executive = new Store ();
+        });
+        </script>
+    </body>
+</html>

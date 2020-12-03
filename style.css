@@ -1,0 +1,83 @@
+body{
+    background-color: #dde5ed;
+}
+body::after {
+    content: "";
+    background: url(index_data/test.svg);
+    opacity: 0.3;
+    top: 15px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: center;   
+  }
+nav{
+    background-color: #AFAFDB;
+    padding-left: 10px;
+    color:#f2a900;
+}
+a:hover{
+    background-color: lightcoral;
+    color: blue;
+}
+
+a.nav{
+    color:#ff3042;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+a.nav:hover{
+    background-color:#8e9fbc;
+}
+
+h1, h2, h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p.profile{
+    padding-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+p.profile.positions{
+    color:#971b2f;
+
+}
+
+div.profile{
+    display: inline-flex;
+    padding-top: 10px;
+}
+div {
+    padding-left:1%;
+}
+
+div.inp{
+    padding-left: 3%;
+}
+
+img{
+    max-width: 100%;
+    padding-left:5px;
+}
+
+img.profile{
+    height: 450px;
+    width:  300px;
+    box-shadow: 7px 7px 7px darkgray;
+
+}
+
+table, th, td{
+    background-color: lightgoldenrodyellow;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.invalid{
+    background-color: lightcoral;
+}

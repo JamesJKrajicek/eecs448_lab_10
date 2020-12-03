@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir= "ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <title>1. Pass Validation</title>
+        <script type="text/javascript" src="pass_val_data/pass_val.js"></script>
+    </head>
+    <body>
+        <nav class="nav">
+            <a class="nav" href="../index.html"><b>Home</b></a> | <!-- The two periods before index.html is HTML code for look one level up in the file hierarchy for index.html-->
+            <a class="nav" href="pass_val.html">Password Checker</a> |
+            <a class="nav" href="slideshow.html">SlideShow</a> |
+            <a class="nav" href="css_modifier.html">CSS Modifier</a> |
+        </nav>
+        <h1>Password Validator</h1>
+        <div style="text-align:left; background-color: antiquewhite; ">
+            <p>Input your password below to determine whether it meets the site's rules.</p>
+            <label for="base_pass">Password: </label>
+            <input type="password" id="base_pass"><br><br>
+            <label for="compare_pass">Reenter here: </label>
+            <input type="password" id="compare_pass"> <br><br>
+            <div style="padding-left: 50px;">
+            <input type="button" onclick="checkPass()" style="visibility: visible;" id="compare" value="Check">
+            </div>
+        </div>
+    </body>
+
+</html>

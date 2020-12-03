@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <script type="text/javascript" src="Admin_backend/DeletePost.js"></script>
+        <title>7. Post Deletion Portal</title>
+    </head>
+    <body>
+        <nav>
+            <a class="nav" href="../index.html"><b>Home</b></a> | <!-- The two periods before index.html is HTML code for look one level up in the file hierarchy for index.html-->
+            <a class="nav" href="CreateUser.html">User Creation</a> |
+            <a class="nav" href="CreatePost.html">Create Post</a> |
+            <a class="nav" href="AdminHome.html">Admin Home</a> |
+        </nav>
+        <div>
+            <br><br>
+            <form id="form1" onsubmit="return anyCheckboxesSelected(this)" action="Admin_backend/DeletePost.php" method="POST">
+                <table>
+                    <tbody>
+                        <?php
+                            error_reporting(E_ALL);
+                            ini_set("display_errors", 1);
+                            echo "<tr><th>Delete</th><th>Username</th><th>Post</th></tr>";
+                            $mysqli = new mysqli ("mysql.eecs.ku.edu", "jameskrajicek", "uhuutha4","jameskrajicek");
+
+                            //Check the connection to the server
+                            if ($mysqli -> connect_errno)
+                            {
+                            printf("Connect failed: %s\n", $mysqli->connect_error);
+                            exit();
+                            }
+                            $query = "SELECT post_id, author_id, content FROM Posts ORDER BY author_id ASC";
+                            if ($result = $mysqli->query($query)) {
+                                /* fetch associative array */
+                                if (!($row = $result->fetch_assoc()))
+                                {
+                                    echo "<tr><td colspan=3>No Entries</td></tr>";
+                                }
+                                else
+                                {
+                                    do {
+                                        //Row is now an associative array representing the fetched tuple from the database table 
+                                        //The while loop iterates through the table of tuples until none remain to be read out (at which point $result->fetch_assoc() returns false and the loop breaks).
+                                        echo "<tr><td><input type=checkbox id=to_del name=to_del[] value="; 
+                                        echo $row["post_id"] . "></td><td>" . $row["author_id"] . "</td><td>". $row["content"] ."</td></tr>";
+                                        // using to_del[] as the name for all the checkboxes in the table of posts sets us up to be able to transmit 
+                                        //more than one checkbox value (such as when the user desires to delete more than one entry) in php array format
+                                        //to the php file using the php associative global array $_REQUEST[].
+                                    } while ($row = $result->fetch_assoc());
+                                }
+                                /* free result set */
+                                $result->free();
+                            }
+                            else
+                            {
+                                echo "<tr><td>No Entries</td></tr>";
+                            }
+                            /* close connection */
+                            $mysqli->close();
+
+                        ?>
+                    </tbody>
+                </table><br>
+                <input type="submit">
+                <p id="errors" style="color:red;"></p>
+            </form>
+            <hr>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <title>2. Blog - User Creation</title>
+
+        <script>
+            function isUserFieldNotEmpty()
+            {
+                console.log("Do I get here?")
+                let username = document.getElementById("username");
+                let errs  = document.getElementById("errors");
+                errs.innerHTML = "";
+                if (username.value == "")
+                {
+                    errs.innerHTML = errs.innerHTML + " Error! Your new username cannot be blank.<br>"
+                    username.className="invalid";
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
+            function resetInvalid (id)
+            {
+                let ElementToReset = document.getElementById(id);
+                ElementToReset.classList.remove("invalid");
+            }
+
+            /*function doPassMatch ()
+            {
+                let pass1 = document.getElementById("password1");
+                let pass2 = document.getElementById("password2");
+                let errs  = document.getElementById("errors");
+                errs.innerHTML = "";
+                if (pass1 != pass2)
+                {
+                    pass2.className = "invalid";
+                    errs.innerHTML = errs.innerHTML + "The passwords you picked do not match"
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }*/
+        </script>
+
+    </head>
+
+    <body>
+        <nav>
+            <a class="nav" href="../index.html"><b>Home</b></a> | <!-- The two periods before index.html is HTML code for look one level up in the file hierarchy for index.html-->
+            <a class="nav" href="#top">User Creation</a> |
+            <a class="nav" href="CreatePost.html">Create Post</a> |
+            <a class="nav" href="AdminHome.html">Admin Home</a> |
+        </nav>
+        <h2>User Creation</h2>
+        <p><b>Welcome!</b> to my blogging service, HawkBook. You've decided to create an account.<br>Smart move.<br>Choose a username below and we'll get you started!</p>
+        <form style="border: 2px dashed black; padding-left: 5px;" onsubmit="return isUserFieldNotEmpty()" action="CreateUser_backend/CreateUser.php" method="POST">
+            <br>
+            <label>Provide a Username for your account:
+                <input type="text" id="username" name="username" onclick="resetInvalid(id)">
+            </label><br><br>
+            <!--
+                <label>Provide a Password :
+                <input type="password" id="password1" name="password1">
+            </label><br><br>
+            <label style="padding-left: 5px;"><b>Confirm your new Password :</b>
+                <input type="password" id="password2" name="password2">
+            </label><br><br>
+            -->
+            <input type="submit"><br>
+            <p id="errors" style="color:red;"></p>
+        </form>
+    </body>
+</html>

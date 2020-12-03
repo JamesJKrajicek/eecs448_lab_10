@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <title>2. Quiz</title>
+    </head>
+    <body>
+        <nav>
+            <a class="nav" href="../index.html">Home</a> |
+            <a class="nav" href="php_tutorial.html">Multiplication Table</a> |
+            <a class="nav" href="#top">Quiz</a> |
+            <a class="nav" href="customerFrontend.html">Store</a> |
+        </nav>
+        <h2>Quiz</h2>
+        <div>
+        <form action="quiz.php" method="POST">
+            <p name="q1"><b>1. </b>What is the capital of the State of Kansas?</p>
+            <div class="inp">
+                <input type="radio" id="kansas_city" name="capital" value="Kansas City"> <!-- id: Allows the label to serve as clickable space to supplement the radio button. name: Ties the radio button to other radio buttons of the same question. value: What is passed to the POST array.-->
+                <label for="kansas_city"> Kansas City</label><br>
+                <input type="radio" id="argonia" name="capital" value="Argonia">
+                <label for="argonia"> Argonia</label><br>
+                <input type="radio" id="topeka" name="capital" value="Topeka">
+                <label for="topeka"> Topeka</label><br>
+                <input type="radio" id="manhattan" name="capital" value="Manhattan">
+                <label for="manhattan"> Manhattan</label><br>
+            </div>
+            <p name="q2"><b>2. </b>How many states are in the United States?</p>
+            <div class="inp">
+                <input type="radio" id="49" name="states" value="49">
+                <label for="49">49</label><br>
+                <input type="radio" id="50" name="states" value="50">
+                <label for="50">50</label><br>
+                <input type="radio" id="40" name="states" value="40">
+                <label for="40">40</label><br>
+                <input type="radio" id="47" name="states" value="47">
+                <label for="47">47</label><br>
+            </div>
+            <p name="q3"><b>3. </b>What is the name of the professor teaching EECS 448 during the Fall 2020 semester?</p>
+            <div class="inp">
+                <input type="radio" id="petr" name="prof" value="Dr. Petr">
+                <label for="petr">Dr. Petr</label><br>
+                <input type="radio" id="demarest" name="prof" value="Dr. Demarest">
+                <label for="demarest">Dr. Demarest</label><br>
+                <input type="radio" id="gibbons" name="prof" value="Dr. Gibbons">
+                <label for="gibbons">Dr. Gibbons</label><br>
+                <input type="radio" id="johnson" name="prof" value="Dr. Johnson">
+                <label for="johnson">Dr. Johnson</label><br>
+                <input type="radio" id="minden" name="prof" value="Dr. Minden">
+                <label for="minden">Dr. Minden</label><br>
+            </div>
+            <p name="q4"><b>4. </b>What sport is KU best known for playing?</p>
+            <div class="inp">
+                <input type="radio" id="softball" name="sport" value="Softball">
+                <label for="softball">Softball</label><br>
+                <input type="radio" id="football" name="sport" value="Football">
+                <label for="football">Football</label><br>
+                <input type="radio" id="basketball" name="sport" value="Basketball">
+                <label for="basketball">Basketball</label><br>
+                <input type="radio" id="lacrosse" name="sport" value="Lacrosse">
+                <label for="lacrosse">Lacrosse</label><br>
+            </div>
+            <p name="q5"><b>5. </b>What city in the State of Kansas is the University of Kansas based from?</p>
+            <div class="inp">
+                <input type="radio" id="lawrence" name="city" value="Lawrence">
+                <label for="lawrence">Lawrence</label><br>
+                <input type="radio" id="kc" name="city" value="Kansas City">
+                <label for="kc">Kansas City</label><br>
+                <input type="radio" id="argonia_q5" name="city" value="Argonia">
+                <label for="argonia_q5">Argonia</label><br>
+                <input type="radio" id="wichita" name="city" value="Wichita">
+                <label for="wichita">Wichita</label><br>
+            </div><br>
+            <input type="submit"><hr>
+        </form>
+        </div>
+
+    </body>
+</html>

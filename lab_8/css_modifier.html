@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="css_modifier_data/css_modifier.js"></script>
+        <title>4. CSS Modifier</title>
+    </head>
+    <body>
+        <nav>
+            <a href="../index.html">Home</a> | <!-- The two periods before index.html is HTML code for look one level up in the file hierarchy for index.html-->
+            <a href="pass_val.html">Password Checker</a> |
+            <a href="slideshow.html">SlideShow</a> |
+            <a href="css_modifier.html">CSS Modifier</a> |
+        </nav>
+        <h1>CSS Modifier Exercise</h1>
+        <p id=test_para style="border-style: dashed; border-color: black ;border-width: 5px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non quam in purus imperdiet ornare. Morbi elementum nisl orci, a venenatis risus lobortis sed. 
+            Mauris eu nisi lobortis, feugiat dui ac, bibendum leo. Sed sed posuere orci. Suspendisse tristique nibh a aliquam varius. Cras egestas dui augue, et gravida 
+            tellus viverra non. Curabitur consectetur condimentum ornare. Mauris turpis ligula, laoreet eget leo sed, faucibus sodales eros. Aliquam tincidunt lectus lacus,
+            et rutrum quam rhoncus vitae. Cras a posuere quam. Sed sit amet purus tempor, interdum lorem nec, elementum justo. Nunc tempus vitae nibh non volutpat. Quisque felis 
+            tellus, congue a dictum vel, vestibulum et felis. Integer ac libero a ligula efficitur venenatis. Nunc euismod felis ac leo tincidunt, vel commodo est hendrerit.
+        </p>
+        <h3>Border</h3>
+        <div style="display: inline-flex;">
+            <label for="b_red">( Inputs must be RGB values) Red: </label>
+            <input id="b_red" type="number" value=0 required>
+            <label for="b_green">Green: </label>
+            <input id="b_green" type="number" value=0 required>
+            <label for="b_blue">Blue: </label>
+            <input id="b_blue" type="number" value=0 required>
+            <label for="b_width">Border Width: </label>
+            <input id="b_width" type="number" value="5">
+            <button id="border_change" onclick="changeBorder()">Change Border Color</button>
+        </div>
+        <h3>Background Color</h3>
+        <div style="display:inline-flex;">
+            <label for="back_red">(Inputs must be RGB values) Red: </label>
+            <input id="back_red" type="number" value=0 required>
+            <label for="back_green">Green: </label>
+            <input id="back_green" type="number" value=0 required>
+            <label for="back_blue">Blue: </label>
+            <input id="back_blue" type="number" value=0 required>
+            <button id="color_change" onclick="changeTextColor()">Change Background Color</button>
+        </div>
+    </body>
+
+</html>

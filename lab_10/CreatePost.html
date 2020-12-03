@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        <script type="text/javascript" src="CreatePost_backend/CreatePost.js"></script>
+        <title>3. Blog - Create Post</title>
+    </head>
+    <body>
+        <nav>
+            <a class="nav" href="../index.html"><b>Home</b></a> | <!-- The two periods before index.html is HTML code for look one level up in the file hierarchy for index.html-->
+            <a class="nav" href="CreateUser.html">User Creation</a> |
+            <a class="nav" href="#top">Create Post</a> |
+            <a class="nav" href="AdminHome.html">Admin Home</a> |
+        </nav>
+        <h2>Write a Post</h2>
+        <form style="border: 2px dashed black; padding-left:5px" onsubmit="return isTextBoxNotEmpty()" action="CreatePost_backend/CreatePost.php" method="POST">
+            <br>
+            <label>Input your username:<br>
+                <input type="text" id="username" name="username" onclick="resetInvalid(id)">
+            </label>
+            <p style="padding-left:5px">If you don't already have a username, create one <a href="CreateUser">here</a>.<br></p>
+            <label>Write your post here:<br>
+                <textarea id="post_txt" name="post_txt" rows="4" cols="50" onclick="resetInvalid(id)"></textarea>
+            </label>
+            <br>
+            <input type="submit"><br>
+            <p style="color:red;"id="errors"></p>
+        </form>
+    </body>
+
+</html>
